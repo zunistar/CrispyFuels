@@ -24,9 +24,6 @@ public class CrispyFuel extends JavaPlugin implements Listener {
     public void onFurnaceBurn(FurnaceBurnEvent event) {
         Player player = (Player) event;
             switch (event.getFuel().getType()) {
-            
-                // * 20 (20 is 20 Ticks. There are 20 ticks per second.)
-                
                 case NETHERRACK:
                     event.setBurnTime(5 * 20);
                     break;
