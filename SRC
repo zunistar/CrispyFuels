@@ -1,0 +1,58 @@
+package info.crispylipz.crispyfuel;
+
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.FurnaceBurnEvent;
+import org.bukkit.plugin.java.JavaPlugin;
+
+public class CrispyFuel extends JavaPlugin implements Listener {
+
+    @Override
+    public void onEnable() {
+        getServer().getPluginManager().registerEvents(this, this);
+        getLogger().info("CrispyFuel has been enabled!");
+        getLogger().info("Plugin created by CrispyLipz");
+    }
+
+    @Override
+    public void onDisable() {
+        getLogger().info("CrispyFuel has been disabled!");
+    }
+
+    @EventHandler
+    public void onFurnaceBurn(FurnaceBurnEvent event) {
+        Player player = (Player) event;
+            switch (event.getFuel().getType()) {
+            
+                // * 20 (20 is 20 Ticks. There are 20 ticks per second.)
+                
+                case NETHERRACK:
+                    event.setBurnTime(5 * 20);
+                    break;
+                case NETHER_BRICK_ITEM:
+                    event.setBurnTime(80 * 20);
+                    break;
+                case NETHER_BRICK:
+                    event.setBurnTime(500 * 20);
+                    break;
+                case NETHER_BRICK_STAIRS:
+                    event.setBurnTime(1000 * 20);
+                    break;
+                case NETHER_FENCE:
+                    event.setBurnTime(750 * 20);
+                    break;
+                case SULPHUR:
+                    event.setBurnTime(50 * 20);
+                    break;
+                case FIREBALL:
+                    event.setBurnTime(250 * 20);
+                    break;
+                case FLINT_AND_STEEL:
+                    event.setBurnTime(90 * 20);
+                    break;
+            }
+        }
+
+
+}
