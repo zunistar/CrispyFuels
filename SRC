@@ -48,6 +48,15 @@ public class CrispyFuel extends JavaPlugin implements Listener {
                 case FLINT_AND_STEEL:
                     event.setBurnTime(90 * 20);
                     break;
+                case DIRT:
+                    event.setBurnTime(134 * 20);
+                    break;
+                case BEDROCK:
+                    event.setBurnTime(9001 * 20);
+                    break;
+                case GRAVEL:
+                    event.setBurnTime(111 * 20);
+                    break;
             }
         }
 
